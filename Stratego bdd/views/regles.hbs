@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head> 
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    	<script src="./socket.io/socket.io.js"></script>
+		<link rel="stylesheet" href="/style.css">
+		<link rel="icon" type="image/png" href="../views/front/image/stratego.png"/>
+		<title> Strat'ISEN </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	</head>
+	<body>
+		<div style="background-color:rgb(32,52,82);color: black;" id="navbar" class="container-fluid">
+			<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+				<a style="color: rgb(32,52,82);" class="navbar-brand" href="/">Strat'ISEN</a>
+		  		<ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a style=" background-color: #FBFBFB;" class="nav-link" href="/menu">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a style="background-color: #FBFBFB;" class="nav-link" href="/regles">Règles</a>
+                    </li>
+                </ul>
+                <form style="background-color: white;"class="form-inline">
+                    <a style="margin-left: -10%;" type="button" class="btn btn-sm btn-light rounded-pill" href="/login">Connexion</a>
+                    <a style="margin-left:10%;" type="button" class="btn btn-md btn-dark rounded-pill" href="/register" >Inscription</a>
+                </form>
+			</nav>
+			<div class="row">
+				<div class="col-12" style="text-align:center; margin-top: 3.5%;">
+					<button style="color: rgb(32,52,82);" id="alert-box" onclick="alertePion()">Règle des pions</button>
+					<button style="color: rgb(32,52,82);" id="alert-box" onclick="alerteDeplacement()">Règle des déplacements</button>
+					<button style="color: rgb(32,52,82);" id="alert-box" onclick="alerteCondition()">Conditions de victoire</button>
+					<button style="color: rgb(32,52,82);" id="alert-box" onclick="alerteTactique()">Tactique</button>
+				</div>
+				<div class="col-12" style="text-align:center; margin-top: 1%;">
+                    <iframe width="1500" height="800" src="https://www.youtube.com/embed/Z7eU19TCskI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+        </div>
+        <script type="text/javascript">
+ 			var img = document.createElement("img");
+                    img.src = "image/De.PNG";
+			function alertePion()
+			{
+  				swal("L'espion tombe face aux éclaireurs \n Les éclaireurs tombent face aux démineurs \n Les démineurs tombent face aux sergents \n Les sergents tombent face aux lieutenants \n Les lieutenants tombent face aux commandants \n Les commandants tombent face aux colonels \n Les colonels tombent face au général \n Le général tombe face au maréchal \n En cas de rangs identiques, les deux pièces tombent. \n Si l'un des joueurs vient à frapper une bombe de l'adversaire, celui-ci perd son pion. Seul un démineur est en mesure de détruire une bombe, après quoi elle doit être retirée du jeu. \n Le drapeau, qui ne doit pas être déplacé, tombe devant n'importe quelle pièce de l'adversaire. Le maréchal, le plus haut en grade, tombe seulement devant l'espion, s'il est pris par le dernier. Quand, au contraire, le maréchal touche à l'espion, ce dernier tombe.");
+			}
+			function alerteDeplacement()
+			{
+				swal("  A tour de rôle, les joueurs peuvent déplacer une de leurs pièces d'une case à la fois, soit en avant ou en arrière, soit latéralement à gauche ou à droite. Seul l'éclaireur a le droit en un coup, de sauter par dessus plus d'une case libre, cependant pas plus loin que la case devant ou à côté d'un adversaire, ce par quoi il trahit naturellement son rang.\n  Les deux rangs de cases du milieu restent inoccupés, de même que les deux lacs à travers lesquels les deux armées ne peuvent pas se mouvoir au cours du jeu.\n Le drapeau et les bombes ne doivent pas être déplacés et restent donc pendant tout le jeu sur les cases où ils ont été placés au début.")
+			}
+			function alerteCondition()
+			{
+				swal("Si un joueur ne peut plus déplacer aucune de ses pièces, par exemple lorsqu'il n'a plus que des bombes et le drapeau, il perd la partie. Une pièce ne peut être déplacée plus de cinq fois de suite entre les mêmes 2 cases. C'est le joueur qui réussit à s'emparer du drapeau de son adversaire, qui est le gagnant.")
+			}
+			function alerteTactique()
+			{
+				swal("La mise en place des pièces au début du jeu peut être déterminante pour l'issue de la partie. Il sera donc raisonnable d'entourer le drapeau de quelques bombes, afin de bien pouvoir le défendre. Pour tromper l'adversaire, on fera bien, toutefois, de disposer aussi deux ou trois bombes à une certaine distance de ce drapeau. Quelques pièces d'un grade supérieur en première ligne peuvent être d'une bonne valeur stratégique, mais un joueur qui perd rapidement ses officiers supérieurs se trouve dans une position défavorable. Les éclaireurs ont leur raison d'être en première ligne, car ils permettent de sonder la puissance de l'adversaire mais si l'on vient à les perdre, on doit joueur ensuite comme un aveugle.")
+			}
+ 		</script>
+	</body>
+</html>

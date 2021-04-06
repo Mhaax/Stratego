@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head> 
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="./socket.io/socket.io.js"></script>
+		<link rel="stylesheet" href="/style.css">
+		<link rel="icon" type="image/png" href="../views/front/image/stratego.png"/>
+		<title> Strat'ISEN </title>
+	</head>
+	<body>
+		<div style="background-color:rgb(32,52,82);color: black;" id="navbar" class="container-fluid">
+			<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+				<a style="color: rgb(32,52,82);" class="navbar-brand" href="/">Strat'ISEN</a>
+		  		<ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a style=" background-color: #FBFBFB;" class="nav-link" href="/menu">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="background-color: #FBFBFB;" class="nav-link" href="/regles">Règles</a>
+                    </li>
+                </ul>
+                <form style="background-color: white;"class="form-inline">
+                    <a style="margin-left: -10%;" type="button" class="btn btn-sm btn-light rounded-pill" href="/login">Connexion</a>
+                    <a style="margin-left:10%;" type="button" class="btn btn-md btn-dark rounded-pill" href="/register" >Inscription</a>
+                </form>
+			</nav>
+			<div class="row">
+				<div class="col-12" style="text-align:center; margin-top: 11%;">
+					<table class="table table-bordered" style="width: 25%;">
+                        <thead>
+                        <tr>
+                            <th scope="col">Inscription</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <form action="/auth/register" method="POST">
+                            <tr>
+                                <th scope="col">
+                                <label style="background-color: rgb(0 0 0 / 0%); color:rgb(32,52,82);" for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                <label style="background-color: rgb(0 0 0 / 0%); color:rgb(32,52,82);" for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                <label style="background-color: rgb(0 0 0 / 0%); color:rgb(32,52,82);" for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th class="form-check" scope="col">
+                                <input type="checkbox" class="form-check-input" id="passCheck1" onclick="myFunction1()">
+                                <label style="background-color: rgb(0 0 0 / 0%); color:rgb(32,52,82);" class="form-check-label" for="passCheck1">Show Password</label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                <label style="background-color: rgb(0 0 0 / 0%); color:rgb(32,52,82);" for="password_c">Password Confirmation</label>
+                                <input type="password" class="form-control" id="password_c" name="password_c">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th class="form-check" scope="col">
+                                <input type="checkbox" class="form-check-input" id="passCheck2" onclick="myFunction2()">
+                                <label style="background-color: rgb(0 0 0 / 0%); color:rgb(32,52,82);" class="form-check-label" for="passCheck2">Show Password</label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="col">
+                                <button id="registerb" type="submit" class="btn btn-primary">Register User</button>
+                                </th>
+                            </tr>
+                        </form>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+            {{#if rouge}}
+                <h4 class="alert alert-danger col-4" style="text-align: center;margin-left:33%;">{{rouge}}</h4>
+            {{/if}}
+            {{#if vert}}
+                <h4 class="alert alert-success col-4" style="text-align: center;margin-left:33%;">{{vert}}</h4>
+            {{/if}}
+		</div>
+        <script>
+            function myFunction1() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+
+            function myFunction2() {
+                var x = document.getElementById("password_c");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+	</body>
+</html>

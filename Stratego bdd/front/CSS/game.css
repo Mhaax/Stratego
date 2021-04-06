@@ -1,0 +1,136 @@
+body{
+    font-family: 'Kongtext Regular', arial;
+    background-color: rgb(32,52,82);
+    color: white;
+    font-weight: bold;
+}
+
+#tab_init table {
+	border-collapse: collapse;
+	margin-left:450px;
+}
+
+#tab_init td {
+	border: solid 2px #22780F;
+	background-image: url(../image/0.png);				
+	display: table-cell;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+
+#tab table {
+  padding: 0;
+  border-collapse: collapse;
+  margin-left:450px;
+}
+
+#tab td {
+  border: solid 2px #22780F;
+  background-image: url(../image/0.png);       
+  display: table-cell;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+
+
+.button {
+  border: none;
+  color: lightblue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #008CBA;
+}
+
+#tab img{
+  height: 80px;
+  width: 80px;
+}
+
+img{
+  height: 60px;
+  width: 60px;
+}
+
+#table_perso table {
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#table_perso  th, td {
+  color: rgb(32,52,82);
+  background: #ddd;
+  border-bottom: 2px solid black; 
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: white;
+  background: black;
+}
+
+
+#chatForm {
+    padding: 0.25rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 3rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+}
+
+#input {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#chatForm>button {
+    background: #333;
+    border: none;
+    padding: 0 1rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages>li {
+    padding: 0.5rem 1rem;
+}
+
+#messages>li:nth-child(odd) {
+    background: #efefef;
+}
