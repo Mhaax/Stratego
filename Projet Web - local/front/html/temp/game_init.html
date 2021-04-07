@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/style.css">
+		<title> Strat'ISEN </title>
+		<link rel="icon" type="image/png" href="../images/stratego.png" />
+		<!--<script src="../socket.io/socket.io.js"></script>-->
+		<link rel="stylesheet" href="../css/game.css">
+		<script src ="../js/pion.js"></script>
+		<script src ="../js/init.js"></script>
+		<script src ="../js/game.js"></script>
+	</head>
+
+	<body>
+		<div class="row">
+			<div class="col-12 col-lg-4" style="text-align:center; margin-top:12%;">
+				<table id="table_perso">
+
+					<tr>
+						<th><a>Eclaireur:</a></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur2" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur3" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur4" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur5" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur6" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur7" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Ecl.PNG" id="Eclaireur8" draggable="true" ondragstart="drag(event)"></th>
+					</tr>
+
+					<tr>
+						<th><a>Espion:</a></th>
+						<th><img src="image/Esp.PNG" id="Espion" draggable="true" ondragstart="drag(event)"></th>
+						<th><a>Demineur:</a></th>
+						<td><img src="image/De.PNG"  id="Demineur1" draggable="true" ondragstart="drag(event)"></th>
+						<td><img src="image/De.PNG"  id="Demineur2" draggable="true" ondragstart="drag(event)"></th>
+						<td><img src="image/De.PNG"  id="Demineur3" draggable="true" ondragstart="drag(event)"></th>
+						<td><img src="image/De.PNG"  id="Demineur4" draggable="true" ondragstart="drag(event)"></th>
+						<td><img src="image/De.PNG"  id="Demineur5" draggable="true" ondragstart="drag(event)"></th>
+					</tr>
+
+					<tr>
+						<th><a>Sergent:</a></th>
+						<th><img src="image/S.PNG" id="Sergent1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/S.PNG" id="Sergent2" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/S.PNG" id="Sergent3" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/S.PNG" id="Sergent4" draggable="true" ondragstart="drag(event)"></th>
+						<th><a>Lieutenant:</a></th>
+						<th><img src="image/L.PNG" id="Lieutenant1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/L.PNG" id="Lieutenant2" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/L.PNG" id="Lieutenant3" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/L.PNG" id="Lieutenant4" draggable="true" ondragstart="drag(event)"></th>
+					</tr>
+
+					<tr>
+						<th><a>Capitaine:</a></th>
+						<th><img src="image/Cap.PNG" id="Capitaine1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Cap.PNG" id="Capitaine2" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Cap.PNG" id="Capitaine3" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Cap.PNG" id="Capitaine4" draggable="true" ondragstart="drag(event)"></th>
+						<th><a>Commandant:</a></th>
+						<th><img src="image/Com.PNG" id="Commandant1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Com.PNG" id="Commandant2" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/Com.PNG" id="Commandant3" draggable="true" ondragstart="drag(event)"></th>
+					</tr>
+
+					<tr>
+						<th><a>Colonel:</a></th>
+						<th><img src="image/C.PNG" id="Colonel1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/C.PNG" id="Colonel2" draggable="true" ondragstart="drag(event)"></th>
+						<th><a>General:</a></th>
+						<th><img src="image/G.PNG" id="General" draggable="true" ondragstart="drag(event)"></th>
+						<th><a>Marechal:</a></th>
+						<th><img src="image/M.PNG" id="Marechal" draggable="true" ondragstart="drag(event)"></th>
+						<th><a>Drapeau:</a></th>
+						<th><img style="width:40px;" src="image/D.PNG" id="Drapeau" draggable="true" ondragstart="drag(event)"></th>
+					</tr>
+
+					<tr>
+						<th><a>Bombe:</a></th>
+						<th><img src="image/B.gif" id="Bombes1" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/B.gif" id="Bombes2" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/B.gif" id="Bombes3" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/B.gif" id="Bombes4" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/B.gif" id="Bombes5" draggable="true" ondragstart="drag(event)"></th>
+						<th><img src="image/B.gif" id="Bombes6" draggable="true" ondragstart="drag(event)"></th>
+					</tr>
+				</table>
+			</div>
+			<div class="col-12 col-lg-5" style=" margin-top: 4%; margin-left: 18%;">
+
+
+				<table id="tab_init" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<tr>
+						<td id='1' ></td>
+						<td id='2'></td>
+						<td id='3'></td>
+						<td id='4'></td>
+						<td id='5'></td>
+						<td id='6'></td>
+						<td id='7'></td>
+						<td id='8'></td>
+						<td id='9'></td>
+						<td id='10'></td>
+					</tr>
+					<tr>
+						<td id='11'></td>
+						<td id='12'></td>
+						<td id='13'></td>
+						<td id='14'></td>
+						<td id='15'></td>
+						<td id='16'></td>
+						<td id='17'></td>
+						<td id='18'></td>
+						<td id='19'></td>
+						<td id='20'></td>
+					</tr>
+					<tr>
+						<td id='21'></td>
+						<td id='22'></td>
+						<td id='23'></td>
+						<td id='24'></td>
+						<td id='25'></td>
+						<td id='26'></td>
+						<td id='27'></td>
+						<td id='28'></td>
+						<td id='29'></td>
+						<td id='30'></td>
+					</tr>
+					<tr>
+						<td id='31'></td>
+						<td id='32'></td>
+						<td id='33'></td>
+						<td id='34'></td>
+						<td id='35'></td>
+						<td id='36'></td>
+						<td id='37'></td>
+						<td id='38'></td>
+						<td id='39'></td>
+						<td id='40'></td>
+					</tr>
+					<tr>
+						<td id='41'></td>
+						<td id='42'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='43'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='44'></td>
+						<td id='45'></td>
+						<td id='46'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='47'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='48'></td>
+						<td id='49'></td>
+						<td id='50'></td>
+					</tr>
+					<tr>
+						<td id='51'></td>
+						<td id='52'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='53'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='54'></td>
+						<td id='55'></td>
+						<td id='56'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='57'></td>
+						<td style="background-image: url(../html/image/1.jpg)" id='58'></td>
+						<td id='59'></td>
+						<td id='60'></td>
+					</tr>
+					<tr>
+						<td id='61'></td>
+						<td id='62'></td>
+						<td id='63'></td>
+						<td id='64'></td>
+						<td id='65'></td>
+						<td id='66'></td>
+						<td id='67'></td>
+						<td id='68'></td>
+						<td id='69'></td>
+						<td id='70'></td>
+					</tr>
+					<tr>
+						<td id='71'></td>
+						<td id='72'></td>
+						<td id='73'></td>
+						<td id='74'></td>
+						<td id='75'></td>
+						<td id='76'></td>
+						<td id='77'></td>
+						<td id='78'></td>
+						<td id='79'></td>
+						<td id='80'></td>
+					</tr>
+					<tr>
+						<td id='81'></td>
+						<td id='82'></td>
+						<td id='83'></td>
+						<td id='84'></td>
+						<td id='85'></td>
+						<td id='86'></td>
+						<td id='87'></td>
+						<td id='88'></td>
+						<td id='89'></td>
+						<td id='90'></td>
+					</tr>
+					<tr>
+						<td id='91'></td>
+						<td id='92'></td>
+						<td id='93'></td>
+						<td id='94'></td>
+						<td id='95'></td>
+						<td id='96'></td>
+						<td id='97'></td>
+						<td id='98'></td>
+						<td id='99'></td>
+						<td id='100'></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+	<div class="row">
+		<div class="col-12" style="text-align:center; margin-top: 1%; margin-left: -7%;">
+			<form><input type="button" class="btn btn-outline-light" value="Ready" onclick="ready();"></form>
+		</div>
+	</div>
+</html>

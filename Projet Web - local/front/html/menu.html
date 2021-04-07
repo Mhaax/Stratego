@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head> 
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../socket.io/socket.io.js"></script>
+		<title> Strat'ISEN </title>
+		<link rel="icon" type="image/png" href="../images/stratego.png" />
+	</head>
+	<body>
+		<div style="color: black;" id="navbar" class="container-fluid">
+			<nav class="navbar navbar-light bg-light fixed-top">
+				<a style="color: rgb(32,52,82);" class="navbar-brand" href="/">Strat'ISEN</a>
+		  		<form style="background-color: white;"class="form-inline">
+		  			<a style="color: rgb(32,52,82); margin-left: auto;" type="button" class="btn btn-sm btn-light rounded-pill" href="/menu.html">Accueil</a>
+		  			<a style="color: rgb(32,52,82); margin-left: auto;" type="button" class="btn btn-sm btn-light rounded-pill" href="/menu.html">Règles</a>
+		  			<a style="color: rgb(32,52,82); margin-left: auto;" type="button" class="btn btn-sm btn-light rounded-pill" href="/menu.html">Menu</a>
+		    		<a style="color: rgb(32,52,82); margin-left: -10%;" type="button" class="btn btn-sm btn-light rounded-pill" href="/login.html">Connexion</a>
+		    		<a style="margin-left:10%;" type="button" class="btn btn-md btn-dark rounded-pill" href="/register.html" >Inscription</a>
+		  		</form>
+			</nav>
+			<div class="row">
+				<div class="col-12 col-md-4" style="text-align:center; margin-top: 14%;">
+					<form style="margin-left:12%; margin-bottom:5%;" class="form-inline ml">
+            			<input type="text" class="form-control mr-sm-2" placeholder="Search">
+            			<button type="submit" class="btn btn-outline-light">Search</button>
+        			</form>
+					<table class="table table-bordered">
+					  <thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">Pseudo</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<tr>
+					      <th scope="col">1</th>
+					      <th scope="col">Pseudo1</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">2</th>
+					      <th scope="col">Pseudo2</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">3</th>
+					      <th scope="col">Pseudo3</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">4</th>
+					      <th scope="col">Pseudo4</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">5</th>
+					      <th scope="col">Pseudo5</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-12 col-md-4" style="text-align:center; margin-top: 17%;">
+					<form action="/search.html" class="search-wrapper cf">
+				        <input style="color: black;" type="text" placeholder="Code Partie..." required="">
+				        <button type="submit">Join Game</button>
+				    
+					</br>
+					</br>
+					</form>
+						<a type="button" class="btn btn-md btn-dark rounded-pill" href="/game_init.html" >PLAY</a>
+					</br>
+					</br>
+
+					<form action="/search.html" class="search-wrapper cf">
+				        <input style="color: black;" type="text" placeholder="Code Partie..." required="">
+				        <button type="submit">Create Game</button>
+				    </form>
+				</div>
+				<div class="col-12 col-md-4" style="text-align:center; margin-top: 14%;">
+					<form style="margin-left:12%; margin-bottom:5%" class="form-inline ml-">
+            			<input type="text" class="form-control mr-sm-2" placeholder="Search">
+            			<button type="submit" class="btn btn-outline-light">Search</button>
+        			</form>
+        			<table class="table table-bordered">
+					  <thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">Pseudo</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  	<tr>
+					      <th scope="col">1</th>
+					      <th scope="col">Pseudo1</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">2</th>
+					      <th scope="col">Pseudo2</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">3</th>
+					      <th scope="col">Pseudo3</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">4</th>
+					      <th scope="col">Pseudo4</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						<tr>
+					      <th scope="col">5</th>
+					      <th scope="col">Pseudo5</th>
+					      <th scope="col">K/D</th>
+					    </tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<nav class="navbar navbar-expand-md navbar-light bg-light fixed-bottom">
+    			<a style="color:white; margin-left:47%;" href="https://i.pinimg.com/originals/bd/71/f0/bd71f076731d3e8450e6496e0d46c7aa.jpg" target="_blank" > Y A RIEN </a>
+			</nav>
+		</div>
+	</body>
+</html>
